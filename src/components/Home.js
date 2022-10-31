@@ -1,13 +1,15 @@
 import About from './About'
 import {useState} from 'react';
+import { createSearchParams,useNavigate} from 'react-router-dom';
+
 const Home = () => {
 
     const [url,setUrl] = useState(null);
     const [data,setData] = useState(null);
-
-
+    let navigate = useNavigate();
 
     const handleChange = (e) =>{
+        e.preventDefault();
         if(validateUrl(url)){
             sendRequest();
         }else{
@@ -19,10 +21,24 @@ const Home = () => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            crossDomain:true,
             body: JSON.stringify({url})
         };
-        const response = await fetch('', requestOptions);
+        const response = await fetch('http://localhost:7000/summarize', requestOptions);
         setData(await response.json());
+        setTimeout('',100);
+        console.log(data);
+        if(data){
+            navigate({
+                pathname:'/summarize',
+                search:createSearchParams({
+                    url:data.url,
+                    summary:data.summary,
+                    top_image:data.top_image,
+                    title:data.title,
+                }).toString()
+        });
+        }
     }
 
     function validateUrl(value) {
@@ -55,7 +71,7 @@ const Home = () => {
             </div>
         </div>
         <About/>
-    </> 
+        </> 
     );
 }
  

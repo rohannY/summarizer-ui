@@ -1,21 +1,27 @@
 import lock from "../assets/lock.svg";
 import placeholder from "../assets/placeholder.svg";
-
+import { useSearchParams } from "react-router-dom";
 const Summarize = () => {
+    const [searchParams]=useSearchParams();
+    const url=searchParams.get("url")
+    const summary=searchParams.get("summary");
+    const title=searchParams.get("title");
+    const imgUrl=searchParams.get("top_image");
+    console.log(imgUrl);
     return ( 
         <>
-            <div className="mx-4 lg:mx-16 bg-slate-50 my-4 w-auto h-auto rounded-lg  flex">
+            <div className="mx-4 lg:mx-16 bg-white my-4 w-auto h-auto rounded-lg flex">
                 <img src={lock} className="h-6 w-6 my-4 ml-4"/>
-                <p className="align-middle text-default font-satoshi text-xl py-4 px-8 ">https://....</p>
+                <p className="align-middle font-satoshi text-sm md:text-xl py-4 px-2 md:px-8" style={{"color": "#ABABAB"}}>{url}</p>
             </div>
             <div className="mx-4 lg:mx-16 bg-white my-4 w-auto h-auto rounded-lg pb-10">
                 <div className="">
-                    <p className="text-center font-satoshi font-bold text-xl md:text-3xl p-10">The Run-Down Dream House </p>
+                    <p className="text-center font-satoshi font-bold text-xl md:text-3xl p-10">{title}</p>
                     <div>
-                        <img src={placeholder} className="md:h-2/5 md:w-2/5 pb-10 mx-auto"/>
+                        <img src={imgUrl} className=" w-4/5 md:h-2/5 md:w-2/5 pb-10 mx-auto"/>
                     </div>
                     <div>
-                        <p className="lg:h-2/5 lg:w-2/5 font-satoshi font-medium text-base md:text-2xl pb-10 mx-10 md:mx-auto" style={{"color": "#ABABAB"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru m.</p>
+                        <p className="md:w-3/5 font-satoshi font-medium text-base md:text-2xl pb-10 mx-10 md:mx-auto text-justify" style={{"color": "#ABABAB"}}>{summary}</p>
                     </div>
                 </div>
             </div>
