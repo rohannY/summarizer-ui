@@ -54,7 +54,7 @@ const Home = () => {
                         <h1 className="text-5xl font-bold leading-tight text-gray-800 text-center tracking-widest font-clash">Summarizer</h1>
                     </div>
                     <div className="my-4">
-                        <p className="font-satoshi tracking-wide text-2xl leading-relaxed">TLDR This helps you summarize any piece of text into concise,<br/> easy to digest content so you can free yourself from information <br/> overload.</p>
+                        <p className="font-satoshi tracking-wide text-2xl leading-relaxed">This helps you summarize any piece of text into concise,<br/> easy to digest content so you can free yourself from information <br/> overload.</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ const Home = () => {
                         <div className="grid grid-cols-3 mx-16">
                          <label className="mb-2 text-xl font-medium text-gray-900" >Enter Url:</label>
                         </div>
-                        <input onChange={event =>setUrl(event.target.value)} className="bg-white text-gray-900 text-xl rounded-xl block p-2.5 px-7 mx-auto w-2/3 h-20 outline-none font-medium" placeholder="https://....." type="text"></input>
+                        <input onChange={event =>setUrl(event.target.value)} className="bg-white text-gray-900 text-xl rounded-xl block p-2.5 px-7 mx-auto w-2/3 h-20 outline-none font-medium" placeholder="https://....." type="search"></input>
                     </div>
                     <button type="submit" className="w-56 h-16 rounded-xl text-2xl text-white font-semibold cursor-pointer tracking-wide" style={{"backgroundColor":"#30A0DF"}}>
                         <span className="">Summarize</span>
