@@ -1,18 +1,22 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/Logo.svg";
 
 const Error = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    function handleClick(){
-        navigate('/'); 
-    }
- 
-    return (
+  function handleClick() {
+    navigate("/");
+  }
+
+  return (
     <section className="bg-primary relative z-10 py-[120px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex">
           <div className="w-full px-4">
             <div className="mx-auto max-w-[400px] text-center">
+              <div className="flex justify-center items-center">
+                <img src={logo} className="mr-5 w-15 my-5" alt="Logo" />
+              </div>
               <h2 className="mb-2 text-[50px] font-bold leading-none text-gray-800 sm:text-[80px] md:text-[100px] font-clash">
                 400
               </h2>
@@ -22,7 +26,10 @@ const Error = () => {
             </div>
           </div>
         </div>
-        <button onClick={handleClick} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-5 my-4 border border-gray-400 rounded-lg shadow-md font-satoshi text-xl">
+        <button
+          onClick={handleClick}
+          class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-5 my-4 border border-gray-400 rounded-lg shadow-md font-satoshi text-xl"
+        >
           Home
         </button>
       </div>
