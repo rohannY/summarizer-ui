@@ -8,7 +8,6 @@ module.exports = {
       fontFamily:{
         'satoshi':['Satoshi','sans-serif'],
         'clash':['Clash Display','sans-serif'],
-        'chill':['Chillax','sans-serif'],
       }
     },
   },
