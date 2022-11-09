@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react';
-import { useSearchParams } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 import Spinner from "./Spinner";
 import Error from './Error';
 import axios from 'axios';
@@ -8,8 +8,8 @@ import lock from "../assets/lock.svg";
 const Summarize = () => {
     const baseUrl="http://localhost:7000/summarize";
 
-    const [searchParams]=useSearchParams();
-    const url=searchParams.get("url")
+    const { state } = useLocation();
+    const url = state.url;
     const [data,setData] = useState(null);
     const [isloading,setLoading] = useState(false);
     const [isinternal,setInternal] = useState(false);
