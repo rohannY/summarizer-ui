@@ -8,9 +8,9 @@ const Navbar = () => {
     <div className="w-full bg-white">
        <nav className="border-gray-200 px-2 sm:px-4 py-2.5 mx-auto">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="" className="flex items-center">
+                <a className="flex items-center">
                     <img src={logo} className="mr-5 h-6 sm:h-9" alt="Logo" />
-                    <span className="self-center text-xl md:text-3xl text-black font-semibold font-clash whitespace-nowrap">Summarizer</span>
+                    <span className="self-center text-xl md:text-3xl text-black font-semibold font-clash whitespace-nowrap">Summation</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
@@ -20,15 +20,17 @@ const Navbar = () => {
                 <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:border-gray-700">
                     <li>
                     <Link to="home" spy={true} smooth={true}>
-                    <a href="#" className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">Home</a>
+                    <a className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">Home</a>
                     </Link>
                     </li>
                     <li>
-                    <a href="#" className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">TL:DR</a>
+                    <Link to="tldr" spy={true} smooth={true}>
+                    <a className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">TL:DR</a>
+                    </Link>
                     </li>
                     <li>
                     <Link to="about" spy={true} smooth={true}>
-                    <a href="#"  className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">About</a>
+                    <a className="block py-2 pr-4 pl-3 text-white text-xl font-clash bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:text-black" aria-current="page">About</a>
                     </Link>
                     </li>
                 </ul>
